@@ -1,14 +1,13 @@
----===GenoBlobs===---
+# GenoBlobs
+David Norrish, 2016-2017
 
-/**
-* GenoBlobs is a simple evolutionary simulator. It consists of coloured balls
-* that bounce around an environment and periodically divide, spawning offspring with
-* slightly mutated attributes.
-*
-* Using only a small set of rules and features, it seeks to recapitulate a range of evolutionary processes.
-*/
+GenoBlobs is a simple evolutionary simulator. It consists of coloured balls
+that bounce around an environment and periodically divide, spawning offspring with
+slightly mutated attributes.
 
-// Evolutionary/biological processes implemented so far:
+Using only a small set of rules and features, it seeks to recapitulate a range of evolutionary processes.
+
+## Evolutionary/biological processes implemented so far:
 1. Blobs bounce around the environment (like proto-bacteria in a primordial sea)
 2. Blobs gain "power" over time (e.g. by photosynthesis) and spawn children when they have accrued sufficient power
 3. Children have slightly mutated attributes compared to their parent
@@ -23,8 +22,7 @@
 12. Avoidance system whereby somewhat dissimilar Blobs will bounce apart
 13. Attack system whereby sufficiently dissimilar Blobs will fight
 
-
-// Technical mechanics:
+## Technical mechanics:
 1. Movement:
     - Bouncing off walls randomly slightly alters velocity in perpendicular trajectory to prevent Blobs becoming trapped in 1D path
     - Hitting a wall increments velocity in that plane by 1 to prevent Blobs coming to rest touching a wall and then
@@ -63,7 +61,7 @@
         - Fixed by removing ArrayList update in timeline loop, and instead only storing Blobs in Viewer group
 
 
-// Yet to implement:
+## Yet to implement:
 - Background environment
 - Allow cells to die by old age
 - Add predator movement pattern, of not bouncing but rather greatly slowing before resuming in same trajectory
@@ -105,7 +103,7 @@
     - Quiet version prior to first split
 
 
-//Rules
+## Rules
 - Damage:
     - Starts at 0
     - Sustained by collisions with hostile Blobs
@@ -124,7 +122,7 @@
 
 Radius caps spawnThreshold (i.e. smaller Blobs will spawn more quickly)
 
-Battles
+## Battles
 There is a trade-off between attack and defence at high levels – somehow create a bi-modal distribution to encourage specialising in one or the other
 In a battle, both Blobs deal each other their attack damage, and receive other’s damage divided by their own defence
 Bounce is determined by xenophobia and similarity
@@ -137,9 +135,7 @@ Either have a constant threshold or add an evolvable “aggression” trait
 If a Blob kills another, get to steal some power, determined by other Blob’s radius
 This can only start evolving after a lineage learns to fight
 
-
-
-// All evolutionary processes (ultimately to be) encapsulated
+## All evolutionary processes (ultimately to be) encapsulated
 1. Random mutation of attributes
 2. Non-random survival, resulting in natural selection
 3. Niche specialisation
