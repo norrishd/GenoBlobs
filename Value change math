@@ -1,0 +1,29 @@
+/**GROWTH OF RADIUS AS FUNCTION OF POWER */
+
+Have two points on the Cartesian graph of power vs radius
+
+1. When power = spawnThreshold/2, radius should = maxSize
+2. When power = spawnThreshold/10 (i.e. newly spawned Blob), radius should = maxSize/2
+
+Radius is dependent variable; power is independent. Use rise/run to get gradient of linear relation
+
+(maxSize - 2*maxSize/3)/(spawnThreshold/2 - spawnThreshold/10)
+g = (maxSize/3)/(4*spawnThreshold/10)
+g = 3*maxSize/(4*spawnThreshold)
+
+Subbing into y = gx +c:
+
+radius = (3*maxSize)/(4*spawnThreshold) * power + c
+
+Find intercept by subbing in: When power = spawnThreshold/2, radius = maxSize
+
+maxSize = (3*maxSize)/(4*spawnThreshold) * spawnThreshold/2 + c
+maxSize = 3*maxSize/8 + c
+c = 5*maxSize/8
+
+Together:
+
+radius = (3*maxSize)/(4*spawnThreshold) * power + (5*maxSize/8)
+
+
+//* INCREASE IN OPACITY AS FUNCTION OF POWER */
